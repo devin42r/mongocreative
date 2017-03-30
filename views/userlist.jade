@@ -1,6 +1,12 @@
 extends layout
 
 block content
+    script.
+        var something = function() {
+            window.location.assign('/newuser')
+        }
+
+    button(onclick='something()') Add New User 
     h1.
         User List
     ul
