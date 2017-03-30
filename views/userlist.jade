@@ -1,17 +1,2 @@
 extends layout
-
-block content
-    script.
-        var something = function() {
-            window.location.assign('/newuser')
-        }
-
-    button(onclick='something()') Add New User 
-    h1.
-        User List
-    ul
-        each user, i in userlist
-            li
-                a(href="mailto:#{user.email}")= user.username
-                form(method="post" action="deleteUser")
-                    button(name="username" value="#{user.username}") Delete
+extends ../node_modules/jade-bootstrap/layouts/cover-list
