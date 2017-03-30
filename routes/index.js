@@ -51,4 +51,12 @@ router.post('/adduser', function(req, res) {
     });
 });
 
+router.post('/deleteUser', function(req, res) {
+    var collection = req.db.get('usercollection');
+    console.log("BODY:", req.body);
+    collection.remove({ username: req.body.username }, function (err, doc) {
+        res.redirect("userlist");
+    });
+});
+
 module.exports = router;
